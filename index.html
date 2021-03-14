@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8" author="Mohammed Al Ameen">
+		<meta charset="utf-8" description="Dashboard for test">
+		<title>Dashboard</title>
+
+		<link rel="stylesheet" type="text/css" href="./assets/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/layouts.css">
+	</head>
+	<body>
+		<aside class="sidebar elevation">
+			<div class="sidebar-header">
+				<img src="./assets/img/logo.png" alt="logo">
+			</div>
+
+			<div class="sidebar-item">
+				<button
+					class="sidebar-button active"
+					id="students"
+					onclick="set_active('students')"
+				>
+					<i class="fas fa-user fa-1x"></i>
+					<span class="disp-block">Students</span>
+				</button>
+			</div>
+
+			<div class="sidebar-item">
+				<button
+					class="sidebar-button"
+					id="lesson"
+					onclick="set_active('lesson')"
+				>
+					<i class="fas fa-book fa-1x"></i>
+					<span class="disp-block">Lesson Plan</span>
+				</button>
+			</div>
+
+			<div class="sidebar-item">
+				<button
+					class="sidebar-button"
+					id="settings"
+					onclick="set_active('settings')"				
+				>
+					<i class="fas fa-cog fa-1x"></i>
+					<span class="disp-block">Settings</span>
+				</button>
+			</div>
+		</aside>
+
+		<div class="navbar"></div>
+
+		<main>
+			<section class="section">
+				<p class="section-title">
+					<i class="fa fa-play rt-h"></i>
+					Videos
+				</p>
+				<div class="container">
+					<form method="post" class="form-area" action="/">
+						<div class="input-field">
+							<input
+								type="url"
+								name="file_upload"
+								placeholder="Insert URL here"
+							/>
+						</div>
+
+						<div class="form-divider">
+							<p class="form-label">
+								or
+							</p>
+						</div>
+
+						<div
+							class="input-field file-drop-area"
+						>
+							<div
+								id="holder"
+								class="flex-center"
+							>
+								<p class="form-label flex-center">Upload</p>
+							</div>
+							<p id="file_name" class="form-label"></p>
+							<input type="file" id="file_data" style="display: none;">
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<script type="text/javascript" src="./assets/js/script.js"></script>
+	</body>
+</html>

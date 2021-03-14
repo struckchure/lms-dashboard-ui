@@ -1,0 +1,214 @@
+:root {
+    --sidebar-width: 8%;
+    --sidebar-background-color: #fff;
+    --navbar-header-height: 5em;
+    --navbar-header-width: 92%;
+    --background-color: #eee;
+    --text-color: #333;
+    --theme-background: rgba(175, 189, 178, 0.986);
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+    transition-duration: 0.4s;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+}
+
+aside {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--sidebar-background-color);
+    padding: 0;
+    position: fixed;
+}
+
+.sidebar {
+    z-index: 10;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.navbar {
+    width: var(--navbar-header-width);
+    height: var(--navbar-header-height);
+    background-color: #fff;
+    display: inline-block;
+    float: none;
+    line-height: 22px;
+    padding-left: var(--sidebar-width);
+}
+
+main {
+    padding: 1em;
+    padding-left: calc(var(--sidebar-width) + 1em);
+    height: 90vh;
+}
+
+a, button {
+    background-color: #fff;
+    border: none;
+    color: var(--text-color);
+    padding: .3em;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    height: var(--navbar-header-height);
+}
+
+.elevation {
+    -webkit-box-shadow: 0 16px 24px 2px 
+        rgba(0, 0, 0, 0.14), 0 6px 30px 5px 
+        rgba(0, 0, 0, 0.12), 0 8px 10px -7px 
+        rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 24px 2px 
+    rgba(0, 0, 0, 0.14), 0 6px 30px 5px 
+    rgba(0, 0, 0, 0.12), 0 8px 10px -7px 
+    rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-item {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sidebar-button {
+    width: 100%;
+    height: var(--navbar-header-height);
+    background-color: inherit;
+    cursor: pointer;
+    font-size: .8em;
+    font-weight: bold;
+    color: var(--theme-background);
+}
+
+.sidebar-button i {
+    padding: .2em;
+    vertical-align:middle;
+    font-size: 1.5em !important;
+}
+
+.sidebar-button:hover {
+    background-color: rgba(0, 0, 0, 0.116);
+}
+
+.sidebar-button.active {
+    border-left: 3px solid rgb(96, 96, 201);
+    color: #333;
+}
+
+.sidebar-header {
+    width: 100%;
+    height: calc(var(--navbar-header-height) + 0.15%);
+    border-bottom: 2px #eee solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-header img {
+    max-width: 100%;
+    width: 2em;
+    height: auto;
+}
+
+.section {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    color: var(--theme-background);
+}
+
+.form-area {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.input-field {
+    margin: 2em;
+}
+
+.input-field input {
+    width: 100%;
+    height: 2.8em;
+    padding: .8em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border: 0;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.input-field input:focus {
+    color: var(--theme-background);
+}
+
+.input-field.file-drop-area, #holder {
+    border-radius: 3px;
+    background-color: #fff;
+    width: 230px;
+    height: 230px;
+    color: #333;
+}
+
+.input-field.file-drop-area, #holder:hover {
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 1px dashed #eee;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.input-field.file-drop-area input[file] {
+    display: none;
+}
+
+.form-divider {
+    width: 100%;
+    text-align: center;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+/* medium screen */
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .sidebar-button span {
+        font-size: .7em;
+    }
+  
+    .sidebar-header img {
+        width: 1.5em;
+    }
+}
+
+/* small screen */
+
+@media only screen and (max-width: 600px) {
+    .sidebar-button span {
+      display: none;
+    }
+
+    .sidebar-header img {
+        width: 1em;
+    }
+}
